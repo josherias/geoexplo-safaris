@@ -1,0 +1,65 @@
+@import "./fonts.css";
+
+/*====================
+	1. General code
+==========================*/
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0px;
+  padding: 0px !important;
+  overflow-x: hidden;
+  color: #555555;
+}
+
+/*----------------------
+	1.1. Typography
+------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #111111;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  margin: 0 auto 15px;
+}
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 20px;
+  line-height: 32px;
+}
+h6 {
+  font-size: 18px;
+}
+
+/* p {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  margin-bottom: 15px;
+} */
+
+/*====================
+	2. Index.php
+==========================*/
+
+/*----------------------
+	2.1. Header
+------------------------------*/
+Header {
+  height: 200px;
+}
