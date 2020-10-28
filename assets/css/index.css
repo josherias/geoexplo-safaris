@@ -1,5 +1,6 @@
 @import "./fonts.css";
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
 /*====================
 	1. General code
 ==========================*/
@@ -23,27 +24,26 @@ h5,
 h6 {
   color: #111111;
   font-weight: 700;
-  font-family: "Nunito", sans-serif;
-  margin: 0 auto 15px;
+  font-family: "PT Sans", sans-serif;
+  /* margin: 0 auto 15px; */
 }
 h1 {
-  font-size: 50px;
-}
-h2 {
   font-size: 40px;
 }
-h3 {
-  font-size: 28px;
+h2 {
+  font-size: 30px;
 }
-h4 {
+h3 {
   font-size: 22px;
 }
-h5 {
+h4 {
   font-size: 20px;
-  line-height: 32px;
+}
+h5 {
+  font-size: 18px;
 }
 h6 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* p {
@@ -61,5 +61,406 @@ h6 {
 	2.1. Header
 ------------------------------*/
 Header {
-  height: 200px;
+  /* height: 20vh; */
+  position: sticky;
+  top: 0;
+  z-index: 10000;
 }
+
+.header-container {
+  padding: 1rem 0rem;
+}
+
+.header-container .header-icon img {
+  width: 150px;
+}
+
+.header-container h5 {
+  padding: 0px;
+  font-size: 16px !important;
+  color: rgb(4, 71, 4);
+}
+.header-container span {
+  font-size: small;
+  margin-top: -2px;
+}
+
+.header-text {
+  margin: 0 5px;
+}
+
+.flex-icon {
+  display: flex;
+  align-items: center;
+}
+
+.header-container .circle_icon {
+  border: 1px solid #000;
+  border-radius: 50%;
+  color: #555;
+  float: left;
+  font-size: 17px;
+  height: 40px;
+  line-height: 35px;
+  margin-right: 10px;
+  text-align: center;
+  width: 40px;
+}
+
+.header-container .circle_icon i {
+  font-size: 1rem;
+  color: rgb(4, 71, 4);
+}
+
+.header-container .social-icons i {
+  cursor: pointer;
+  margin: 0 3px;
+  font-size: 1.8rem;
+}
+
+.header-container .social-icons i:hover {
+  color: rgb(7, 167, 33);
+}
+
+@media screen and (max-width: 749px) {
+  .header-icon {
+    text-align: center;
+  }
+}
+
+/*----------------------
+	2.1.1 Navbar
+------------------------------*/
+.navbar {
+  padding: 1rem 3rem;
+}
+
+.navbar .nav-toggler {
+  color: white !important;
+  background-color: yellow !important;
+  outline: none;
+}
+
+.bg-green {
+  background-color: rgb(2, 49, 2);
+}
+
+.toggler {
+  color: azure;
+}
+
+.navbar-nav li a {
+  color: rgb(243, 242, 241) !important;
+  margin: 0 1rem;
+  font-weight: 600;
+  font-family: "PT Sans", sans-serif;
+}
+
+.navbar-nav li a:hover {
+  color: yellow !important;
+}
+
+.dropdown-menu {
+  background-color: rgb(2, 49, 2);
+  border: none;
+}
+
+.dropdown-menu a {
+  font-size: small;
+  text-align: left !important;
+  font-weight: 200;
+  margin: 0 -5px !important;
+  margin-bottom: 4px !important;
+}
+
+.dropdown-menu a:hover {
+  color: yellow;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 749px) {
+  .navbar {
+    padding: 1rem 1rem;
+  }
+  .navbar-nav {
+    text-align: left;
+  }
+
+  .navbar-nav li a {
+    margin: 0.8rem 0;
+    margin-top: 0px;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-nav li {
+    border-bottom: 0.5px solid rgb(68, 66, 66);
+  }
+
+  .dropdown-menu a {
+    text-align: center !important;
+    margin-top: 0;
+  }
+}
+
+/*----------------------
+	2.2. Slider
+------------------------------*/
+
+.slider {
+  margin: 0;
+  margin-bottom: 3rem;
+}
+
+.carousel-item img {
+  height: 85vh;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 35%;
+}
+
+.carousel-caption h1,
+h5 {
+  color: white;
+  font-weight: 600;
+}
+
+.carousel-caption .underlin {
+  background-color: white;
+  height: 1px;
+  width: 70%;
+  margin: 1.5rem auto;
+}
+
+.carousel-caption h5 {
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.btn-book {
+  border-radius: 0;
+  margin: 1rem 0;
+  background-color: rgb(4, 71, 4);
+  outline: none;
+  border: none;
+}
+
+/*----------------------
+	2.3. Destinations 
+------------------------------*/
+.destinations-section {
+  padding: 2rem 0;
+  margin-bottom: 5rem;
+}
+
+.destinations-section h1 {
+  font-size: 40px;
+  text-align: center;
+}
+.destinations-section h4 {
+  text-align: center;
+  font-weight: 400;
+  color: #555555;
+  margin-bottom: 3rem;
+}
+
+.destination {
+  border-radius: 10px;
+  position: relative;
+}
+
+.destination img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.9;
+  transition: all 200ms ease-in;
+}
+
+.padding-0 {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 5px;
+}
+
+.destination-text {
+  position: absolute;
+  bottom: 10px;
+  left: 40%;
+  font-weight: 400;
+  text-align: center;
+}
+
+.destination:hover > a img {
+  opacity: 1;
+}
+
+/*----------------------
+	2.3. Trending Acivities
+------------------------------*/
+
+.activities {
+  margin: 1rem 0p;
+  background-color: rgb(235, 235, 228);
+  color: white;
+  padding: 3.5rem 0;
+}
+
+.activities h2 {
+  color: rgb(6, 46, 2);
+}
+
+.activities p {
+  color: rgb(6, 46, 2);
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: 1fr;
+  padding: 0 5px;
+}
+
+.grid-col {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.grid .col-one {
+  grid-column: span 2;
+  height: 212px;
+}
+
+.grid-col img {
+  width: 100%;
+  border-radius: 5px;
+  min-height: 200px;
+  transition: transform 500ms ease-in;
+}
+
+.grid-col img:hover {
+  transform: scale(1.1);
+}
+
+.grid-col .col-text {
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  z-index: 100;
+}
+
+.col-text a {
+  cursor: pointer;
+  color: white;
+}
+
+.col-text a:hover {
+  text-decoration: underline;
+}
+
+/*----------------------
+	2.4. Countings
+------------------------------*/
+.countings {
+  background: url("../images/slide/seychelles-tours-trips.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 5rem 0;
+}
+
+.countings .row-row {
+  display: grid;
+  width: 100%;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  justify-items: center;
+  align-content: center;
+}
+
+.countings .col {
+  margin: 5px;
+}
+
+.round-wrapper {
+  background-color: rgb(7, 77, 7);
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  height: 200px;
+  max-width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.round-wrapper h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: white;
+}
+
+.round-wrapper p {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+/*----------------------
+	2.5. Packages Slider
+------------------------------*/
+.packages-slider {
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+.packages-slider h1 {
+  font-size: 40px;
+  text-align: center;
+}
+.packages-slider h4 {
+  text-align: center;
+  font-weight: 400;
+  color: #555555;
+  margin-bottom: 3rem;
+}
+
+.packages-slider .package-container {
+  width: 100%;
+  position: relative;
+}
+
+.package-container img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.package-container .package-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.package-container .package-text-top {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: rgb(88, 182, 79);
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+}
+
+.package-container .package-text-top span {
+  font-size: small;
+}
+
+/*----------------------
+	2.5. Packages Slider
+------------------------------*/
