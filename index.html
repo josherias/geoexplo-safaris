@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Geoxplo Tours | Travel</title>
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="./assets/css/all.css">
+
+    <!-- owl carousel css -->
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
 
     <!-- style.css -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -17,18 +24,495 @@
     <!-- bootsrap js -->
     <script src="./assets/js/bootstrap.min.js"></script>
 
+    <!-- owl carousel js -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="jquery.counterup.min.js"></script>
+
+    <!-- index js -->
+    <script src="./assets/js/index.js"></script>
+
 </head>
 <body>
    <Header>
-     <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="icon">
-                    <h2>Geoxplo</h2>
+     <div class="container header-container" id="header-container">
+        <div class="row align-items-center">
+
+            <div class="col-md-2 mb-2 header-icon">
+                <img src="./assets//icons/signature-logo.png" alt="">
+            </div>
+
+            <div class="col-md-3 flex-icon mb-2 d-none d-md-block">
+                <div class="circle_icon">
+                    <i class="fas fa-envelope-square"></i>
+                </div>
+
+                <div class="header-text">
+                    <h5>FOR SUPPORT MAIL US</h5>
+                    <span>josherias@gmail.com</span>
+                </div>
+            </div>
+
+            <div class="col-md-4 flex-icon mb-2 d-none d-md-block">
+                <div class="circle_icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="header-text">
+                    <h5>SERVICE HELPLINE CALL US</h5>
+                    <span>+256 753473842</span>
+                </div>
+            </div>
+
+            <div class="col-md-3 social-icons mb-2 d-none d-md-block">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-google-plus-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-twitter-square"></i>
+            </div>
+         
+        </div>
+     </div>
+
+     <!-- navbar -->
+
+     <nav class="navbar navbar-expand-lg  bg-green navbar-dark">
+        <button class="navbar-toggler mb-3" style="outline: none;" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon toggler"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav nav-text-color">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="packages.html">Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activities.html">Activities</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="destinations.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Destinations
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="destination.html">Uganda</a>
+                <a class="dropdown-item" href="destination.html">Kenya</a>
+                <a class="dropdown-item" href="destination.html">Tanzania</a>
+                <a class="dropdown-item" href="destination.html">Rwanda</a>
+              </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+   </Header>
+
+   <!-- ----- slider ------- -->
+   <section class="slider">
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="10000">
+            <img src="./assets//images/slide/gorilla-uga.jpg" class="d-block w-100" id="img-carousel" alt="...">
+            <div class="carousel-caption ">
+              <h1>VISIT BWINDI IMPENETRABLE</h1>
+              <div class="underlin"></div>
+              <h5>Gorilla Tracking Expeiences</h5>
+            </div>
+          </div>
+          <div class="carousel-item" data-interval="2000">
+            <img src="./assets//images/slide/mountain.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption ">
+                <h1>VISIT MAHINGA PARK</h1>
+                <div class="underlin"></div>
+                <h5>Home of the remaining red hat Monkeys</h5>
+               <button class="btn btn-warning btn-lg btn-book" style="color: white;">Book a Safari &nbsp; <i class="fas fa-arrow-right"></i></button>
+              </div>
+          </div>
+          <div class="carousel-item"  data-interval="2000">
+            <img src="./assets//images/slide/rwanda2.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption ">
+                <h1>VISIT BUNDIBUJO MOUNTAINS</h1>
+                <div class="underlin"></div>
+                <h5>View of the best Senaries to watch with loved ones</h5>
+              </div>
+          </div>
+        </div>
+        
+      </div>
+   </section>
+
+   <!-- destinations -->
+   <section class="destinations-section">
+       <div class="container">
+               <h1>TRAVEL DESTINATIONS</h1>
+               <h4>Visit your dream destination !</h4>
+          
+           <div class="row">
+               <div class="col-sm-3 padding-0 destination">    
+                   <a href="#">
+                       <img src="./assets/images/destinations/kibale.jpg" alt="img">
+                       <h5 class="destination-text">UGANDA</h5>
+                    </a>
+                </div>
+            <div class="col-sm-3 padding-0 destination"> 
+                <a href="#">
+                   <img src="./assets/images/destinations/mgahinga.jpg" alt="img">
+                   <h5 class="destination-text">RWANDA</h5>
+                </a>
+            </div>
+            <div class="col-sm-3 padding-0 destination"> 
+                <a href="#">
+                   <img src="./assets/images/destinations/samburu.jpg" alt="img">
+                   <h5 class="destination-text">KENYA</h5>
+                </a>
+            </div>
+            <div class="col-sm-3 padding-0 destination"> 
+                <a href="#">
+                   <img src="./assets/images/destinations/zanzibar.jpg" alt="img">
+                   <h5 class="destination-text">TANZANIA</h5>
+                </a>
+            </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Trending Activities -->
+   <section class="activities">
+       <div class="container">
+           <h2>Trending Activities</h2>
+           <p>From adventure trips to luxury camping. From epic train journeys to amazing wildlife sightings. <br>
+            These are the trips and destinations that are making travellers smile.</p>
+
+            <div class="row">
+                <div class="grid">
+                    <div class="grid-col col-one">
+                        <img src="./assets/images/activities/thumbnails/gorilla-tracking-uganda.jpg" alt="img">
+                        <div class="col-text">
+                            <h5>Gorilla Tracking</h5>
+                            <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                    <div class="grid-col col-two">
+                        <img src="./assets/images/activities/thumbnails/hiking-tanzania.jpg" alt="img">
+                        <div class="col-text">
+                            <h5>Mountain Hiking</h5>
+                            <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                    <div class="grid-col">
+                        <img src="./assets/images/activities/thumbnails/history-kenya.jpg" alt="img">
+                        <div class="col-text">
+                            <h5>Rock paintings</h5>
+                            <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                    <div class="grid-col">
+                        <img src="./assets/images/activities/thumbnails/rafting.jpg" alt="img">
+                        <div class="col-text">
+                            <h5>Gorilla Tracking</h5>
+                            <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                    <div class="grid-col">
+                        <img src="./assets/images/activities/thumbnails/wildebeest-migration.jpg" alt="img">
+                        <div class="col-text">
+                            <h5>River surfing</h5>
+                            <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                    <div class="grid-col">
+                        <img src="./assets/images/activities/thumbnails/wildlife-tanzania.jpg" alt="">
+                        <div class="col-text">
+                            <h5>Zoo Visits</h5>
+                            <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                    <div class="grid-col">
+                        <img src="./assets/images/activities/thumbnails/whitesand-kenya.jpg" alt="">
+                        <div class="col-text">
+                            <h5>Beach visits</h5>
+                            <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+   </section>
+ 
+<!----- countings ------->
+<section class="countings">
+    <div class="container">
+        <div class="row-row">
+            <div class="col">
+                <div class="round-wrapper">
+                    <h1>30+</h1>
+                    <p>Years In Business</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="round-wrapper">
+                    <h1>200+</h1>
+                    <p>Destinations</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="round-wrapper">
+                    <h1>1000+</h1>
+                    <p>Packages</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="round-wrapper">
+                    <h1>100+</h1>
+                    <p>Countries</p>
                 </div>
             </div>
         </div>
-     </div>
-   </Header>
+    </div>
+</section>
+
+<!----- packages slider ------->
+<section class="packages-slider">
+    <div class="container">
+        <h1>Find Your Adventure</h1>
+        <h4>Check out the top safari Packages</h4>
+        <div class="owl-carousel owl-theme owl-package">
+            <div class="package-container">
+                <img src="./assets/images/packages/horse-riding-kenya.jpg" alt="">
+                <div class="package-text-top">
+                    <span>From</span> <span>$200</span>
+                    <br>
+                    <span><i class="fas fa-map-marker-alt"></i> &nbsp; Uganda</span>
+                </div> 
+                <div class="package-text">
+                    <h5>Kibale national Park Chimp Tracking</h5>
+                    <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                </div>
+            </div>
+            <div class="package-container">
+                <img src="./assets/images/packages/lion-3.jpg" alt="">
+                <div class="package-text-top">
+                    <span>From</span> &nbsp;<span>$200</span> 
+                    <br>
+                    <span><i class="fas fa-map-marker-alt"></i> &nbsp; Uganda</span>
+                </div> 
+                <div class="package-text">
+                    <h5>Lake Nakuru National Park</h5>
+                    <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                </div>
+            </div>
+            <div class="package-container">
+                <img src="./assets/images/packages/lake-bunyonyi.jpg" alt="">
+                <div class="package-text-top">
+                    <span>From</span> <span>$200</span>
+                    <br>
+                    <span><i class="fas fa-map-marker-alt"></i> &nbsp; Uganda</span>
+                </div> 
+                <div class="package-text">
+                    <h5>Lake Bunyonyi Bird Viewing</h5>
+                    <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                </div>
+            </div>
+            <div class="package-container">
+                <img src="./assets/images/packages/horse-riding-kenya.jpg" alt="">
+                <div class="package-text-top">
+                    <span>From</span> <span>$200</span>
+                    <br>
+                    <span><i class="fas fa-map-marker-alt"></i> &nbsp; Uganda</span>
+                </div> 
+                <div class="package-text">
+                    <h5>Kenya Horse Riding</h5>
+                    <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                </div>
+            </div>
+            <div class="package-container">
+                <img src="./assets/images/packages/sipi-falls.jpg" alt="">
+                <div class="package-text-top">
+                    <span>From</span> <span>$200</span>
+                    <br>
+                    <span><i class="fas fa-map-marker-alt"></i> &nbsp; Uganda</span>
+                </div> 
+                <div class="package-text">
+                    <h5>Sipi Falls</h5>
+                    <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                </div>
+            </div>
+            <div class="package-container">
+                <img src="./assets/images/packages/white-water-rafting.jpg" alt="">
+                <div class="package-text-top">
+                    <span>From</span> <span>$200</span>
+                    <br>
+                    <span><i class="fas fa-map-marker-alt"></i> &nbsp; Uganda</span>
+                </div> 
+                <div class="package-text">
+                    <h5>Water rafting</h5>
+                    <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                </div>
+            </div>
+            <div class="package-container">
+                <img src="./assets/images/packages/lake-mburo-zebras.jpg" alt="">
+                <div class="package-text-top">
+                    <span>From</span> <span>$200</span>
+                    <br>
+                    <span><i class="fas fa-map-marker-alt"></i> &nbsp; Uganda</span>
+                </div> 
+                <div class="package-text">
+                    <h5>Lake Mburo Zebras</h5>
+                    <a href="#" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   
+<!----- about section ------->
+<section class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 m-auto text-center">
+                <h1>Geoxplo Tours and Travels</h1>
+
+                <p>We organize safaris for solo travelers, small and big groups, families, couples
+                     traveling for wildlife, culture, photography, birding, primates, adventure, name it. Our team of experts is always ready to plan your journey to Africa’s rich and diverse wildlife, 
+                    cultural heritage and beautiful landscapes.</p>
+
+                <a href="#" class="btn btn-outline-light btn-large">More About Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-----  testimonials section ------->
+<section class="testimonials">
+    <div class="container">
+        <div class="owl-carousel owl-theme owl-testimonial">
+
+            <div class="testimonial-container first">
+                <div class="bg-color">
+                    <h1>Our travellers <br> love us</h1>
+                <p>take a look at what they say about us</p>
+                <p>Swipe &nbsp; <i class="fas fa-arrows-alt-h"></i> </p>
+                </div>
+            </div>
+
+
+            <div class="testimonial-container">
+                <img src="./assets/images/testimonials/gayatri.jpg" alt="">
+                <div class="testimonial-text">
+                    <h4>Tom Powels, Uganda</h4>
+                    <p>Lats year i took my last trip with them to butan, which also coincided with my birthady</p>
+                </div>
+            </div>
+
+            <div class="testimonial-container">
+                <img src="./assets/images/testimonials/sahil.jpg" alt="">
+                <div class="testimonial-text">
+                    <h4>John Smith, Kenya</h4>
+                    <p>I was a little appresive about doing the things like Gorilla tracking until i came across this</p>
+                </div>
+            </div>
+
+
+            <div class="testimonial-container">
+                <img src="./assets/images/testimonials/katya.jpg" alt="">
+                <div class="testimonial-text">
+                    <h4>Tisha Pryanka, Uganda</h4>
+                    <p>All in all the experince was excellent and enjoyed travelling with the minded travels</p>
+                </div>
+            </div>
+
+            <div class="testimonial-container">
+                <img src="./assets/images/testimonials/Surbhi.jpg" alt="">
+                <div class="testimonial-text">
+                    <h4>Christina Millian, Rwanda</h4>
+                    <p>Lats year i took my last trip with them to butan, which also coincided with my birthady</p>
+                </div>
+            </div>
+
+            <div class="testimonial-container">
+                <img src="./assets/images/testimonials/bhavna.jpg" alt="">
+                <div class="testimonial-text">
+                    <h4>Tom Powels, Uganda</h4>
+                    <p>Lats year i took my last trip with them to butan, which also coincided with my birthady</p>
+                </div>
+            </div>
+
+
+            <div class="testimonial-container first">
+                <div class="bg-color">
+                    <h1>Here More from  <br>Our customers</h1>
+                    <br>
+                    <a href="#" class="btn btn-outline-light btn-large">View More Testimonials</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Navigate</h3>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#" class="nav-links">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-links">About us</a></li>
+                    <li class="nav-item"><a href="#" class="nav-links">Packages</a></li>
+                    <li class="nav-item"><a href="#" class="nav-links">Activities</a></li>
+                    <li class="nav-item"><a href="#" class="nav-links">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>destinations</h3>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#" class="nav-links">Uganda</a></li>
+                    <li class="nav-item"><a href="#" class="nav-links">Kenya</a></li>
+                    <li class="nav-item"><a href="#" class="nav-links">Tanzania</a></li>
+                    <li class="nav-item"><a href="#" class="nav-links">Rwanda</a></li> 
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>Quick Contacts</h3>
+                <ul class="navbar-nav">
+                    <li class="nav-item">Phone <br> +256 7564904</li>
+                    <li class="nav-item">Email <br>geoxplo@hotmail.com</li>
+                    <li class="nav-item">Address <br>Block 34, Kansanga Road</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <h3>Our Mission</h3>
+                <p>Founded on the principles of wildlife conservation, community preservation and hospitality, we are your best bet at getting the raw all-round African experience. We have a deep-rooted commitment to provide seamless travel and timeless unforgettable safaris.</p>
+                <p>It does not matter if you are a seasoned traveler or if its your first time in Africa, our team of expert consultants and talented, knowledgeable safaris guides will go out of their way to ensure your comfort and deliver the ultimate safari beyond your expectations.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <span><i class="fab fa-facebook"></i></span>
+                <span><i class="fab fa-instagram"></i></span>
+            </div>
+            <div class="col-sm-6 text-right">
+                <span>Booking terms | &copy; copyright Josherias 2020</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>

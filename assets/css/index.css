@@ -14,6 +14,38 @@ body {
 }
 
 /*----------------------
+3.1 Hero section
+------------------------------*/
+.hero {
+  background: url("../images/packages/chimp-4.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+}
+
+.hero-background {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 1)
+  );
+}
+
+.hero-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.hero-flex h1 {
+  color: white;
+  text-align: center;
+  margin: 2rem;
+}
+
+/*----------------------
 	1.1. Typography
 ------------------------------*/
 h1,
@@ -131,7 +163,7 @@ Header {
 /*----------------------
 	2.1.1 Navbar
 ------------------------------*/
-.navbar {
+Header .navbar {
   padding: 1rem 3rem;
 }
 
@@ -149,7 +181,7 @@ Header {
   color: azure;
 }
 
-.navbar-nav li a {
+Header .navbar-nav li a {
   color: rgb(243, 242, 241) !important;
   margin: 0 1rem;
   font-weight: 600;
@@ -324,6 +356,7 @@ h5 {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: 1fr;
   padding: 0 5px;
+  padding-bottom: 3rem;
 }
 
 .grid-col {
@@ -370,6 +403,7 @@ h5 {
   background: url("../images/slide/seychelles-tours-trips.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 5rem 0;
 }
 
@@ -415,7 +449,7 @@ h5 {
 	2.5. Packages Slider
 ------------------------------*/
 .packages-slider {
-  margin: 2rem 0;
+  margin: 3rem 0;
   padding: 1rem 0;
 }
 
@@ -462,5 +496,257 @@ h5 {
 }
 
 /*----------------------
-	2.5. Packages Slider
+	2.6. About section
 ------------------------------*/
+.about {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  background: url("../images/slide/dest-bg.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.about h1,
+p {
+  padding: 1rem 0;
+  color: rgb(240, 234, 234);
+}
+
+.about p {
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.about a {
+  border-radius: 0;
+  width: 60%;
+  margin-bottom: 1rem;
+}
+
+/*----------------------
+	2.7. Testimonials
+------------------------------*/
+.testimonials {
+  margin: 2rem 0;
+  padding: 3rem 0;
+}
+
+.testimonial-container {
+  position: relative;
+}
+
+.testimonial-container .bg-color {
+  background: rgb(10, 59, 3);
+  padding: 3.5rem 1rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.testimonial-container .bg-color a {
+  margin: 2.2rem 0;
+  border-radius: 0;
+  padding: 10px;
+}
+
+.testimonial-container .bg-color h1 {
+  color: white;
+  font-weight: bolder;
+}
+
+.testimonial-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.testimonial-container .testimonial-text {
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+  width: 90%;
+  padding: 10px;
+}
+
+.testimonial-text h4 {
+  font-size: 18px;
+}
+
+.testimonial-text p {
+  font-size: 14px;
+  color: #555;
+}
+
+/*----------------------
+	2.8. Footer
+------------------------------*/
+footer {
+  padding: 6rem 0;
+  background: url("../images/slide/footer.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer h3 {
+  color: rgb(194, 194, 5);
+  font-size: 20px;
+  text-transform: capitalize;
+  margin: 1rem 0;
+}
+
+footer li {
+  color: rgb(179, 179, 171);
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+footer a {
+  color: rgb(179, 179, 171);
+  text-decoration: none;
+}
+
+footer p {
+  color: rgb(179, 179, 171);
+}
+
+footer i {
+  font-size: 30px;
+  color: rgb(179, 179, 171);
+  margin: 1rem;
+}
+
+footer a:hover {
+  color: rgb(39, 5, 117) !important;
+}
+
+/*====================
+	3. Packages.php
+==========================*/
+
+/*----------------------
+3.1 Hero section
+------------------------------*/
+
+/* @overide heros section */
+.hero {
+  background: url("../images/packages/chimp-4.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-flex h5 {
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/*----------------------
+3.2 packages section
+------------------------------*/
+.packages {
+  padding: 2rem 0;
+  background-color: rgb(233, 233, 233);
+}
+
+.packages h1 {
+  text-align: center;
+  color: rgb(2, 36, 8);
+}
+
+.packages h4 {
+  text-align: center;
+  color: rgb(2, 36, 8);
+  margin: 1rem 0;
+}
+
+.packages .package-container {
+  width: 100%;
+  position: relative;
+  margin: 2rem 0;
+}
+
+/*====================
+	4. activities.php
+==========================*/
+
+/*----------------------
+3.2 activities page
+------------------------------*/
+
+.activities-page {
+  margin: 1rem 0;
+  padding: 2rem 0;
+}
+
+.activities-page h1 {
+  text-align: center;
+}
+.activities-page h5 {
+  text-align: center;
+  color: #000;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+.activities-page ul {
+  list-style: square;
+  text-align: left;
+}
+.activities-page ul li {
+  text-decoration: none;
+  text-align: left;
+  margin: 1rem 0;
+}
+
+/*====================
+	6. single-activity.php
+==========================*/
+
+/*----------------------
+6.1 activities-description
+------------------------------*/
+.activity-description {
+  margin: 2rem 0;
+  padding: 2rem 0;
+}
+
+.activity-description h5 {
+  color: rgb(6, 43, 1);
+}
+
+.activity-description p {
+  color: rgb(143, 139, 139);
+}
+
+/*====================
+	6. destination.php
+==========================*/
+
+/*----------------------
+6.1 destination-description
+------------------------------*/
+.destination-description {
+  margin: 2rem 0;
+  padding: 2rem 0;
+}
+
+.destination-description h5 {
+  color: rgb(6, 43, 1);
+}
+
+.destination-description p {
+  color: rgb(143, 139, 139);
+}
+
+.destination-description span {
+  padding: 2rem 0;
+}
+
+/*----------------------
+6.2 activities-section
+------------------------------*/
+
+.grid-destination {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+}
