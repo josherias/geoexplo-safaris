@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+     <!-- bootstrap css -->
+     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+ <!-- font awesome css -->
+ <link rel="stylesheet" href="./assets/css/all.css">
+     
+    <!-- jquery -->
+    <script src="./assets/js/jquery.min.js"></script>
+
+    <!-- bootsrap js -->
+    <script src="./assets/js/bootstrap.min.js"></script>
+
+</head>
+<body class="bg-light">
+
+      <!-- navbar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="dashboard.html">Dashboard</a>
+        <button class="navbar-toggler mb-3" style="outline: none;" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon toggler"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+          <ul class="navbar-nav nav-text-color">
+            <li class="nav-item active">
+              <a class="nav-link" href="packages.html">Packages <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="acivities.html">Activities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="destinations.html">Destinations</a>
+            </li>
+          
+            <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto mr-5">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add a Safari Package</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+                <div class="row ">
+
+                    <div class="col-sm-6 mx-auto">
+                        <!-- package title -->
+                        <div class="form-group">
+                            <label for="">Package Title</label>
+                            <input type="text" class="form-control" placeholder="Package title" name="packageTitle">
+                        </div>
+
+                        <!-- package image -->
+                        <div class="form-group">
+                            <label for="">Image</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                            <!-- text area for uploaded image -->
+                          <textarea class="my-4 rounded bg-light" name="imageArea" id="imageArea" cols="20" rows="6" ></textarea>                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 mx-auto">
+                        <!-- package days -->
+                        <div class="form-group">
+                            <label for="">Number of days</label>
+                            <input type="text" class="form-control" placeholder="Two days" name="packageDays">
+                        </div>
+
+                        <!-- package price -->
+                        <div class="form-group">
+                            <label for="">Price</label>
+                            <input type="text" class="form-control" placeholder="$200" name="packagePrice">
+                        </div>
+
+                        <!-- package country -->
+                        <div class="form-group">
+                            <label for="">Country</label>
+                            <input type="text" class="form-control" placeholder="Kenya" name="packageCountry">
+                        </div>
+
+                        <!-- ----published -->
+                        <div class="form-group my-5">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1" name="packagePublish">
+                                <label class="custom-control-label" for="customCheck1">Publish to Web</label>
+                              </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- modal -->
+
+   <!-- ------ dasboard ------- -->
+   <section class="dashboard my-5">
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <div class="col-md-9 my-3">
+                <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Safari &nbsp; <i class="fas fa-plus"></i></button>
+            </div>
+            <div class="col-md-3 my-3">
+               <form action="">
+                   <div class="form-group">
+                       <input type="text" class="form-control" placeholder="Search Package"/>
+                   </div>
+               </form>
+            </div>
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                       Safaris
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Photo</th>
+                                    <th>Title</th>
+                                    <th>Days</th>
+                                    <th>Price</th>
+                                    <th>Country</th>
+                                    <th>Published</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Photo</td>
+                                    <td><a href="#">Best of East Africa Wildlife</a></td>
+                                    <td>2</td>
+                                    <td>2000</td>
+                                    <td>Uganda</td>
+                                    <td>yes</td>
+                                    <td> 
+                                        <a href="#" class="btn btn-secondary btn-sm m-2">Edit</a>
+                                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+    
+</body>
+</html>

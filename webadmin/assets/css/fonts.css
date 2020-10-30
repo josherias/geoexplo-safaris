@@ -1,0 +1,11 @@
+/* roboto */
+@import "../fonts/Roboto/Roboto-Black.ttf";
+@import "../fonts/Roboto/Roboto-Light.ttf";
+@import "../fonts/Roboto/Roboto-Regular.ttf";
+
+/* pt-sans */
+@import "../fonts//PT-Sans/PTSans-Regular.ttf";
+@import "../fonts//PT-Sans/PTSans-Bold.ttf";
+
+/* nunito */
+@import "../fonts//Nunito/Nunito-Regular.ttf";
