@@ -8,12 +8,12 @@
      <!-- bootstrap css -->
      <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 
+  <!-- trix css -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.0/trix.min.css" crossorigin="anonymous" />
+
 
       <!-- font awesome css -->
       <link rel="stylesheet" href="./assets/css/all.css">
-
-  <!-- trix css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.0/trix.min.css" crossorigin="anonymous" />
      
     <!-- jquery -->
     <script src="./assets/js/jquery.min.js"></script>
@@ -21,10 +21,12 @@
     <!-- bootsrap js -->
     <script src="./assets/js/bootstrap.min.js"></script>
 
-    
-
     <!-- trix editor js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.0/trix-core.min.js" crossorigin="anonymous"></script>
+
+
+
+
 
 </head>
 <body class="bg-light">
@@ -67,54 +69,58 @@
     <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add New Post</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Add Destination</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
             <form action="">
-                <div class="row ">
-
-                    <div class="col-sm-6">
-                        <!-- post title -->
+                <div class="row">
+                   
+                    <div class="col-sm-6 mx-auto">
+                         <!-- destination title-->
                         <div class="form-group">
-                            <label for="">Post Title</label>
-                            <input type="text" class="form-control" placeholder="Package title" name="postTitle">
+                            <label for="">Title</label>
+                            <input type="text" class="form-control" name="destinationTitle">
                         </div>
 
-                        <!-- post category -->
-                        <div class="form-group">
-                            <label for="">Category</label>
-                            <input type="text" class="form-control" placeholder="Category" name="postCategory">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                         <!-- package image -->
-                         <div class="form-group">
-                            <label for="">Image</label>
+                      
+
+                         <!-- upload image-->
+                         <div class="form-group my-4">
+                             <label for="">Upload Image</label>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" class="custom-file-input" id="customFile" name="destinationImage">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
-                            <!-- text area for uploaded image -->
-                          <textarea class="mt-3 rounded bg-light" name="imageArea" id="imageArea" cols="20" rows="6" ></textarea>                            
+                        </div>
+
+                        <!-- select country -->
+                        <div class="form-group">
+                          <select class="form-control">
+                            <option>Default select</option>
+                          </select>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-6">
+                         <!-- activity short Description -->
+                         <div class="form-group">
+                            <label for="">Description</label>
+                            <input id="x" type="hidden" class="form-control" placeholder="" name="destinationDescription"></input>
+                            <trix-editor input="x"></trix-editor>
                         </div>
                     </div>
-                    <div class="col-sm-12">
-                        <!-- post Article -->
-                        <div class="form-group">
-                           <label for="">Post Article</label>
-                           <input id="x" type="hidden" class="form-control" placeholder="" name="postArticle"></input>
-                           <trix-editor input="x"></trix-editor>
-                       </div>
-                   </div>
-
+                    
+                
                 </div>
             </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -124,47 +130,42 @@
    <!-- ------ dasboard ------- -->
    <section class="dashboard my-5">
     <div class="container-fluid">
-        <div class="row">
 
-
+      <div class="row">
             <div class="col-md-9 my-3">
-                <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Post &nbsp; <i class="fas fa-plus"></i></button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Destination &nbsp; <i class="fas fa-plus"></i></button>
             </div>
+
             <div class="col-md-3 my-3">
-               <form action="">
-                   <div class="form-group">
-                       <input type="text" class="form-control" placeholder="Search Blogs"/>
-                   </div>   
-               </form>
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search Destinations"/>
+                    </div>   
+                </form>
             </div>
+      </div>
+
+        <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                       Blog Posts
+                      Destinations
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Photo</th>
                                     <th>Title</th>
-                                    <th>Category</th>
-                                    <th>Published</th>
-                                    <th>Views</th>
-                                    <th>Date created</th>
+                                    <th>description</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Photo</td>
-                                    <td><a href="#">Best of East Africa Wildlife</a></td>
-                                    <td>Wildlife</td>
-                                    <td>yes</td>
-                                    <td>200</td>
-                                    <td>31-06-2020</td>
-                                    <td> 
-                                        <a href="#" class="btn btn-secondary btn-sm m-2">Edit</a>
+                                    <td>Kahuzi-Biega National Park</td>
+                                    <td>Founded in 1939 and designated a UNESCO World H</td>
+                                    <td>
+                                        <a href="#" class="btn btn-secondary btn-sm m-2" data-toggle="modal" data-target="#exampleModal">Edit</a>
                                         <a href="#" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
