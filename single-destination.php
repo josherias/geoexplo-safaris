@@ -32,7 +32,17 @@ $destinationDetails = $destinationDetails[0];
 <section class="destination-description">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-sm-5">
+                <div class="icon my-3" style="display: flex; flex-direction:column;">
+                    <i class="fas fa-map-marker-alt" style="font-size: 4rem; color:green;"></i>
+                    <span style="font-size: 1.4rem;">
+                        <?php $destinationCountry = $destination->displaySingleInstance('countries', $destinationDetails['country_id']);
+                        echo htmlentities($destinationCountry[0]['title']); ?>
+                    </span>
+                </div>
+                <img src="<?php echo $targetPath . "assets/images/destinations/" .  htmlentities($destinationDetails['image'] ?? 'lake-mburo-zebras.jpg'); ?>" class="img-fluid my-2 border" style="width: 90%;" alt="">
+            </div>
+            <div class="col-md-7">
                 <h5 class="text-center my-3" style="font-size: 2rem;">About Destination</h5>
                 <?php echo  $destinationDetails['description'] ?? 'Description'; ?>
             </div>

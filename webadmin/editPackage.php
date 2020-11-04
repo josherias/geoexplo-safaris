@@ -29,7 +29,7 @@ if (!empty($_POST) &&  isset($_POST['edit_package'])) {
     $packageImage  = $_POST['packageImage'];
 
     $packageImage     = $_FILES['packageImage']['name'];
-    $target_path = "../assets/images/packages" . basename($_FILES['packageImage']['name']);
+    $target_path = "../assets/images/packages/" . basename($_FILES['packageImage']['name']);
 
 
     move_uploaded_file($_FILES['packageImage']['tmp_name'], $target_path);

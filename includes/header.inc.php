@@ -42,7 +42,7 @@
             <div class="row align-items-center">
 
                 <div class="col-md-2 mb-2 header-icon">
-                    <img src="./assets/icons/signature-logo.png" alt="">
+                    <img src="./assets/icons/signature-logo.png" class="" alt="">
                 </div>
 
                 <div class="col-md-3 flex-icon mb-2 d-none d-md-block">
@@ -52,7 +52,7 @@
 
                     <div class="header-text">
                         <h5>FOR SUPPORT MAIL US</h5>
-                        <span>josherias@gmail.com</span>
+                        <span>goxplo.tours@gmail.com</span>
                     </div>
                 </div>
 
@@ -61,8 +61,8 @@
                         <i class="fas fa-phone"></i>
                     </div>
                     <div class="header-text">
-                        <h5>SERVICE HELPLINE CALL US</h5>
-                        <span>+256 753473842</span>
+                        <h5>FOR INQUIRIES CALL US</h5>
+                        <span>+256 753 499842</span>
                     </div>
                 </div>
 
@@ -88,27 +88,33 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="packages.php">Packages</a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="activities.php">Activities</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.php">Packages</a>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="destinations.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Destinations
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu p-3" aria-labelledby="navbarDropdownMenuLink">
+
                             <?php
-                            require_once('./webadmin/database/Instances.php');
+                            include('./webadmin/database/Instances.php');
 
                             $destinationsCountries = $destination->displayCollection('countries');
 
                             foreach ($destinationsCountries as $country) :
                             ?>
 
-                                <a class="dropdown-item" href="destination.php?country_id=<?php echo $country['id']; ?>"><?php echo $country['title']; ?></a>
-                            <?php endforeach; ?>
+                                <a class="dropdown-item py-2" href="destination.php?country_id=<?php echo $country['id']; ?>"><?php echo $country['title']; ?></a>
+                            <?php endforeach;
+                            ?>
+
                         </div>
                     </li>
                     <li class="nav-item">

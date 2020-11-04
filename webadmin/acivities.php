@@ -43,7 +43,7 @@ $activitiesCollection = $activity->displayCollection('activities');
 
 
                             <!-- activity image -->
-                            <div class="form-group mt-5">
+                            <div class="form-group mt-1">
                                 <label for="">Image</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="customFile" name="activityImage">
@@ -66,13 +66,14 @@ $activitiesCollection = $activity->displayCollection('activities');
                                 <label for="">Price</label>
                                 <input type="text" class="form-control" placeholder="e.g. 200" name="activityPrice">
                             </div>
+                        </div>
 
+                        <div class="col-sm-12">
                             <!-- activity short Description -->
                             <div class="form-group">
                                 <label for="">Short Description</label>
                                 <textarea type="text" class="form-control" placeholder="" name="activityShortDesc"></textarea>
                             </div>
-
                         </div>
 
                         <div class="col-sm-12">
@@ -125,7 +126,7 @@ $activitiesCollection = $activity->displayCollection('activities');
 
 
                             <!-- activity image -->
-                            <div class="form-group mt-5">
+                            <div class="form-group mt-1">
                                 <label for="">Image</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="customFile" name="activityImage">
@@ -148,13 +149,14 @@ $activitiesCollection = $activity->displayCollection('activities');
                                 <label for="">Price</label>
                                 <input type="text" class="form-control" placeholder="e.g. 200" id="edit_activityPrice" name="activityPrice">
                             </div>
+                        </div>
 
+                        <div class="col-sm-12">
                             <!-- activity short Description -->
                             <div class="form-group">
                                 <label for="">Short Description</label>
                                 <textarea type="text" class="form-control" id="edit_activityShortDesc" name="activityShortDesc"></textarea>
                             </div>
-
                         </div>
 
                         <div class="col-sm-12">
@@ -194,6 +196,12 @@ $activitiesCollection = $activity->displayCollection('activities');
                 <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add new Activity &nbsp; <i class="fas fa-plus"></i></button>
             </div>
 
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <input class="form-control" placeholder="Search Title" id="search_activity" name="search_activity"></input>
+                </div>
+            </div>
+
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -213,13 +221,13 @@ $activitiesCollection = $activity->displayCollection('activities');
                                 </tr>
                             </thead>
 
-                            <?php foreach ($activitiesCollection as $activity) : ?>
-                                <tbody>
+                            <tbody id="result">
+                                <?php foreach ($activitiesCollection as $activity) : ?>
                                     <tr id="rowHide" data-id="<?php echo $activity['id']; ?>">
-                                        <td><img width="80px" src="<?php echo $targetPath . "assets/images/activities/activities_db/" . htmlentities($activity['photo']); ?>" alt="img"></td>
-                                        <td><a href="#"><?php echo htmlentities($activity['title']); ?></a></td>
-                                        <td><?php echo htmlentities("$" . $activity['price']); ?></td>
-                                        <td><?php echo htmlentities($activity['countries']); ?></td>
+                                        <td><img width="80px" src="<?php echo $targetPath . "assets/images/activities/activities_db/" . $activity['photo']; ?>" alt="img"></td>
+                                        <td><a href="#"><?php echo $activity['title']; ?></a></td>
+                                        <td><?php echo "$" . $activity['price']; ?></td>
+                                        <td><?php echo $activity['countries']; ?></td>
                                         <td><?php echo htmlentities(substr($activity['short_desc'], 0, 30)) . "..."; ?></td>
 
                                         <td>
@@ -227,8 +235,8 @@ $activitiesCollection = $activity->displayCollection('activities');
                                             <button class="btn btn-danger btn-sm deleteActivity" data-id="<?php echo $activity['id']; ?>">Delete</button>
                                         </td>
                                     </tr>
-                                </tbody>
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -300,6 +308,26 @@ $activitiesCollection = $activity->displayCollection('activities');
 
             $(`#rowHide[data-id='${$(this).data("id")}']`).hide();
         });
+
+
+        //search
+        $('#search_activity').keyup(function() {
+            const aName = $(this).val();
+
+            if (aName != '') {
+                $.ajax({
+                    url: "fetch.php",
+                    method: "post",
+                    data: {
+                        'aName': aName
+                    },
+                    success: function(data) {
+                        $('#result').html(data);
+                    }
+                })
+
+            }
+        })
 
 
     });

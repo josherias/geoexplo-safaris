@@ -1,7 +1,6 @@
 <?php
-require_once('ParentClass.php');
 
-class Blog extends ParentClass
+class Blogg extends ParentClass
 {
     //new blog
     public function addBlog($data)

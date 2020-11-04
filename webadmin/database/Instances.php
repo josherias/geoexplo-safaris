@@ -5,13 +5,14 @@ spl_autoload_register(function ($className) {
 });
 
 
+
 $db = new Database();
 
 $activity = new Activity($db);
 
-$blog = new Blog($db);
+$blog = new Blogg($db);
 
-$destination = new Destination($db);
+$destination = new Destinationn($db);
 
 $package = new Package($db);
 

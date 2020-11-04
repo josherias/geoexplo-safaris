@@ -1,5 +1,6 @@
 <?php
 
+require_once('ParentClass.php');
 
 class Package extends ParentClass
 {

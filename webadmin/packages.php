@@ -30,16 +30,16 @@ $destinationsArray = $package->displayCollection('destinations');
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add a Safari Package</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- form -->
-                <form method="POST" action="addPackage.php" enctype="multipart/form-data">
+        <form method="POST" action="addPackage.php" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add a Safari Package</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- form -->
                     <div class="row ">
 
                         <div class="col-sm-6 mx-auto">
@@ -114,22 +114,17 @@ $destinationsArray = $package->displayCollection('destinations');
                                 <input id="x" type="hidden" class="form-control" name="packageArticle"></input>
                                 <trix-editor input="x"></trix-editor>
                             </div>
-
-                            <!-- submit -->
-                            <div class="form-group">
-                                <input type="submit" value="Save" class="btn btn-primary" name="add_package">
-                            </div>
                         </div>
 
                     </div>
 
-                </form>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Save" class="btn btn-primary" name="add_package">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 
@@ -249,6 +244,12 @@ $destinationsArray = $package->displayCollection('destinations');
                 <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Safari &nbsp; <i class="fas fa-plus"></i></button>
             </div>
 
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <input class="form-control" placeholder="Search Name" id="search_text" name="search_text"></input>
+                </div>
+            </div>
+
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -267,10 +268,10 @@ $destinationsArray = $package->displayCollection('destinations');
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <?php
-                            foreach ($packagesCollection as $package) :
-                            ?>
-                                <tbody>
+                            <tbody id="result">
+                                <?php
+                                foreach ($packagesCollection as $package) :
+                                ?>
                                     <tr id="rowHide" data-id="<?php echo $package['id']; ?>">
                                         <td><img width="80px" src="<?php echo $targetPath . "assets/images/packages/" . htmlentities($package['photo']); ?>" alt="img"></td>
                                         <td><?php echo htmlentities($package['name']); ?></td>
@@ -283,8 +284,8 @@ $destinationsArray = $package->displayCollection('destinations');
                                             <button class="btn btn-danger btn-sm deletePackage" data-id="<?php echo $package['id']; ?>">Delete</button>
                                         </td>
                                     </tr>
-                                </tbody>
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -350,6 +351,25 @@ $destinationsArray = $package->displayCollection('destinations');
 
             $(`#rowHide[data-id='${$(this).data("id")}']`).hide();
         });
+
+        //search
+        $('#search_text').keyup(function() {
+            const pName = $(this).val();
+
+            if (pName != '') {
+                $.ajax({
+                    url: "fetch.php",
+                    method: "post",
+                    data: {
+                        'pName': pName
+                    },
+                    success: function(data) {
+                        $('#result').html(data);
+                    }
+                })
+
+            }
+        })
 
     });
 </script>

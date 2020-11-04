@@ -1,5 +1,5 @@
 <?php
-
+require_once('ParentClass.php');
 class Auth extends ParentClass
 {
     public function getCredentials($table, $password, $username)

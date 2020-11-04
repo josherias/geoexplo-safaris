@@ -23,18 +23,18 @@ include_once('./includes/header.inc.php');
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Destination</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
+        <form method="POST" action="addDestination.php" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Destination</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
-                <form method="POST" action="addDestination.php" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="col-sm-6 mx-auto">
+                        <div class="col-sm-12 mx-auto">
 
                             <!-- destination title-->
                             <div class="form-group">
@@ -57,14 +57,14 @@ include_once('./includes/header.inc.php');
                                 <label for="">Country</label>
                                 <select class="form-control" name="destinationCountry">
                                     <?php foreach ($countriesCollection as $country) : ?>
-                                        <option value="<?php echo htmlentities($country['id']); ?>"><?php echo htmlentities($country['title']); ?></option>
+                                        <option value="<?php echo $country['id']; ?>"><?php echo htmlentities($country['title']); ?></option>
                                     <?php endforeach ?>
                                 </select>
                             </div>
 
                         </div>
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <!-- activity short Description -->
                             <div class="form-group">
                                 <label for="">Description</label>
@@ -72,19 +72,14 @@ include_once('./includes/header.inc.php');
                                 <trix-editor input="x"></trix-editor>
                             </div>
                         </div>
-
-                        <div class="col-sm-12 my-3">
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Save" name="add_destination">
-                            </div>
-                        </div>
                     </div>
-                </form>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Save" name="add_destination">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 
@@ -130,7 +125,7 @@ include_once('./includes/header.inc.php');
                                 <label for="">Country</label>
                                 <select class="form-control" name="destinationCountry" id="edit_destinationCountry">
                                     <?php foreach ($countriesCollection as $country) : ?>
-                                        <option value="<?php echo htmlentities($country['id']); ?>"><?php echo htmlentities($country['title']); ?></option>
+                                        <option value="<?php echo $country['id']; ?>"><?php echo $country['title']; ?></option>
                                     <?php endforeach ?>
                                 </select>
                             </div>
@@ -174,6 +169,12 @@ include_once('./includes/header.inc.php');
                 <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Destination &nbsp; <i class="fas fa-plus"></i></button>
             </div>
 
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <input class="form-control" placeholder="Search Title" id="search_destination" name="search_destination"></input>
+                </div>
+            </div>
+
 
         </div>
 
@@ -194,10 +195,9 @@ include_once('./includes/header.inc.php');
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <?php
-
-                            foreach ($destinationsCollection as $destinations) : ?>
-                                <tbody>
+                            <tbody id="result">
+                                <?php
+                                foreach ($destinationsCollection as $destinations) : ?>
                                     <tr id="rowHide" data-id="<?php echo $destinations['id']; ?>">
                                         <td><img width="80px" src="<?php echo $targetPath . "assets/images/destinations/" . htmlentities($destinations['image']); ?>" alt="img"></td>
                                         <td><?php echo htmlentities($destinations['title']); ?></td>
@@ -215,8 +215,8 @@ include_once('./includes/header.inc.php');
 
 
                                     </tr>
-                                </tbody>
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -286,6 +286,26 @@ include_once('./includes/header.inc.php');
 
             $(`#rowHide[data-id='${$(this).data("id")}']`).hide();
         });
+
+
+        //search
+        $('#search_destination').keyup(function() {
+            const dName = $(this).val();
+
+            if (dName != '') {
+                $.ajax({
+                    url: "fetch.php",
+                    method: "post",
+                    data: {
+                        'dName': dName
+                    },
+                    success: function(data) {
+                        $('#result').html(data);
+                    }
+                })
+
+            }
+        })
 
     });
 </script>

@@ -2,7 +2,6 @@
 session_start();
 
 require_once('./database/Instances.php'); //get all instnaces of classes in one file
-
 require_once('./functions.inc.php'); //get all instnaces of classes in one file
 
 
@@ -23,21 +22,18 @@ include_once('./includes/header.inc.php');
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add New Post</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
+        <form action="addBlog.php" method="POST" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
-                <form action="addBlog.php" method="POST" enctype="multipart/form-data">
                     <div class="row">
-
                         <div class="col-sm-6">
-
-
                             <!-- post title -->
                             <div class="form-group">
                                 <label for="">Post Title</label>
@@ -82,20 +78,16 @@ include_once('./includes/header.inc.php');
                                 <input id="x" type="hidden" class="form-control" placeholder="" name="blogArticle"></input>
                                 <trix-editor input="x"></trix-editor>
                             </div>
-
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Save" name="add_blog">
-                            </div>
-
                         </div>
 
                     </div>
-                </form>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Save" name="add_blog">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 
@@ -180,10 +172,14 @@ include_once('./includes/header.inc.php');
         ?>
 
         <div class="row">
-
-
             <div class="col-md-9 my-3">
                 <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Post &nbsp; <i class="fas fa-plus"></i></button>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <input class="form-control" placeholder="Search Title" id="search_blog" name="search_blog"></input>
+                </div>
             </div>
 
             <div class="col-sm-12">
@@ -203,8 +199,8 @@ include_once('./includes/header.inc.php');
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <?php foreach ($blogCollection as $blog) : ?>
-                                <tbody>
+                            <tbody id="result">
+                                <?php foreach ($blogCollection as $blog) : ?>
                                     <tr id="rowHide" data-id="<?php echo $blog['id']; ?>">
                                         <td><img width="80px" src="<?php echo $targetPath . "assets/images/blog/blog_db/" . htmlentities($blog['photo']); ?>" alt="img"></td>
                                         <td><?php echo htmlentities($blog['title']); ?> </td>
@@ -216,8 +212,8 @@ include_once('./includes/header.inc.php');
                                             <button class="btn btn-danger btn-sm deleteBlog" data-id="<?php echo $blog['id']; ?>">Delete</button>
                                         </td>
                                     </tr>
-                                </tbody>
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -261,8 +257,6 @@ include_once('./includes/header.inc.php');
                     $('#edit_blogCategory').val(blogData.category);
                     $('#edit_blogArticle').val(blogData.article);
 
-
-
                     $('#edit_blog_model').modal('show');
 
 
@@ -288,6 +282,25 @@ include_once('./includes/header.inc.php');
 
             $(`#rowHide[data-id='${$(this).data("id")}']`).hide();
         });
+
+        //search
+        $('#search_blog').keyup(function() {
+            const bName = $(this).val();
+
+            if (bName != '') {
+                $.ajax({
+                    url: "fetch.php",
+                    method: "post",
+                    data: {
+                        'bName': bName
+                    },
+                    success: function(data) {
+                        $('#result').html(data);
+                    }
+                })
+
+            }
+        })
 
     });
 </script>

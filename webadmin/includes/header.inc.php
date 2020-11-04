@@ -1,6 +1,5 @@
 <?php
 ob_start();
-
 require_once('./functions.inc.php');
 
 
@@ -38,7 +37,7 @@ require_once('./functions.inc.php');
     <!-- navbar -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="dashboard.html">Dashboard</a>
+        <a class="navbar-brand" href="dashboard.php">Dashboard</a>
         <button class="navbar-toggler mb-3" style="outline: none;" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon toggler"></span>
         </button>

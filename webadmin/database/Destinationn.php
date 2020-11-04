@@ -1,8 +1,6 @@
 <?php
 
-require_once('ParentClass.php');
-
-class Destination extends ParentClass
+class Destinationn extends ParentClass
 {
     //new package
     public function addDestination($data)

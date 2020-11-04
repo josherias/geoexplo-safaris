@@ -18,11 +18,10 @@ if (!empty($_POST) &&  isset($_POST['edit_destination'])) {
 
     $destinationTitle          = $_POST['destinationTitle'];
     $destinationCountry  = $_POST['destinationCountry'];
-
     $destinationDescription       = $_POST['destinationDescription'];
 
     $destinationImage     = $_FILES['destinationImage']['name'];
-    $target_path = "../assets/images/destinations" . basename($_FILES['destinationImage']['name']);
+    $target_path = "../assets/images/destinations/" . basename($_FILES['destinationImage']['name']);
 
 
     move_uploaded_file($_FILES['destinationImage']['tmp_name'], $target_path);

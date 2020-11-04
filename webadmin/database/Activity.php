@@ -1,5 +1,6 @@
 <?php
 
+require_once('ParentClass.php');
 
 class Activity extends ParentClass
 {

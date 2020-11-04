@@ -1,5 +1,5 @@
 <?php
-require_once('./webadmin/database/Instances.php');
+include('./webadmin/database/Instances.php');
 
 $destinationCollection = $destination->displayCollectionLimit('destinations', 8);
 shuffle($destinationCollection);

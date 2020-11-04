@@ -17,7 +17,7 @@ if (!empty($_POST) &&  isset($_POST['add_destination'])) {
     $destinationDescription       = $_POST['destinationDescription'];
 
     $destinationImage     = $_FILES['destinationImage']['name'];
-    $target_path = "../assets/images/destinations" . basename($_FILES['destinationImage']['name']);
+    $target_path = "../assets/images/destinations/" . basename($_FILES['destinationImage']['name']);
 
 
 

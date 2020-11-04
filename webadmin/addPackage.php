@@ -29,7 +29,7 @@ if (!empty($_POST) &&  isset($_POST['add_package'])) {
 
 
     $packageImage     = $_FILES['packageImage']['name'];
-    $target_path = "../assets/images/packages" . basename($_FILES['packageImage']['name']);
+    $target_path = "../assets/images/packages/" . basename($_FILES['packageImage']['name']);
 
 
 

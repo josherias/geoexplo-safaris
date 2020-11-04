@@ -1,9 +1,11 @@
 <?php
-
+/* 
 spl_autoload_register(function ($className) {
     require_once("$className.php");
 });
+ */
 
+require_once "C:\wamp64\www\geoexplo\webadmin\database\Database.php";
 
 
 
@@ -27,6 +29,13 @@ class ParentClass
     public function displayCollection($table)
     {
         $this->db->query("SELECT * FROM {$table}");
+        return $this->db->resultset();
+    }
+
+    //display a collection form database
+    public function displaySearch($table, $title, $attr)
+    {
+        $this->db->query("SELECT * FROM {$table} WHERE {$attr} LIKE '%" . $title . "%'");
         return $this->db->resultset();
     }
 

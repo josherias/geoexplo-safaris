@@ -1,11 +1,7 @@
 <?php
 session_start();
-
-
 //require the instances file
 require_once('./database/Instances.php');
-
-
 // require all the functions in one file 
 include("./functions.inc.php");
 
@@ -17,8 +13,8 @@ if (!empty($_POST) &&  isset($_POST['add_blog'])) {
     $blogPublish       = $_POST['blogPublish'];
     $blogArticle       = $_POST['blogArticle'];
 
-    $currentTime = time();
-    $blogDate = strftime("%B-%d-%Y %H:%M:%S", $currentTime);
+    $blogDate = date("Y/m/d");
+
 
     $blogImage     = $_FILES['blogImage']['name'];
     $target_path = "../assets/images/blog_db" . basename($_FILES['blogImage']['name']);

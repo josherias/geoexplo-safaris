@@ -35,7 +35,7 @@ shuffle($packageCollection);
                 </div>
             </div>
             <div class="carousel-item" data-interval="2000">
-                <img src="./assets//images/slide/mountain.jpg" class="d-block w-100" alt="...">
+                <img src="./assets//images/slide/chimp-kibale-national-park.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption ">
                     <h1>VISIT MAHINGA PARK</h1>
                     <div class="underlin"></div>
@@ -79,7 +79,7 @@ shuffle($packageCollection);
 </section>
 
 <!-- Trending Activities -->
-<section class="activities">
+<section class="activities" style="background-color: whitesmoke;">
     <div class="container">
         <h2>Trending Activities</h2>
         <p>From adventure trips to luxury camping. From epic train journeys to amazing wildlife sightings. <br>

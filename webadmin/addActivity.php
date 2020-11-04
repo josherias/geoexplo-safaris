@@ -19,7 +19,7 @@ if (!empty($_POST) &&  isset($_POST['add_activity'])) {
     $activityDescription       = $_POST['activityDescription'];
 
     $activityImage     = $_FILES['activityImage']['name'];
-    $target_path = "../assets/images/activities_db" . basename($_FILES['activityImage']['name']);
+    $target_path = "../assets/images/activities_db/" . basename($_FILES['activityImage']['name']);
 
 
     move_uploaded_file($_FILES['activityImage']['tmp_name'], $target_path);
