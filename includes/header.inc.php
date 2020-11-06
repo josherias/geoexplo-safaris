@@ -1,3 +1,7 @@
+<?php
+include('./webadmin/database/Instances.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,32 +11,29 @@
     <title>Geoxplo Tours | Travel</title>
 
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $targetPath ?>assets/css/bootstrap.min.css">
 
     <!-- font-awesome css -->
-    <link rel="stylesheet" href="./assets/css/all.css">
+    <link rel="stylesheet" href="<?php echo $targetPath ?>assets/css/all.css">
 
     <!-- owl carousel css -->
-    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?php echo $targetPath ?>assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo $targetPath ?>assets/css/owl.theme.default.min.css">
 
     <!-- style.css -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $targetPath ?>assets/css/style.css">
 
     <!-- jquery -->
-    <script src="./assets/js/jquery.min.js"></script>
+    <script src="<?php echo $targetPath ?>assets/js/jquery.min.js"></script>
 
     <!-- bootsrap js -->
-    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo $targetPath ?>assets/js/bootstrap.min.js"></script>
 
     <!-- owl carousel js -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <script src="jquery.counterup.min.js"></script>
+    <script src="<?php echo $targetPath ?>assets/js/owl.carousel.min.js"></script>
 
     <!-- index js -->
-    <script src="./assets/js/index.js"></script>
+    <script src="<?php echo $targetPath ?>assets/js/index.js"></script>
 
 </head>
 
@@ -42,7 +43,7 @@
             <div class="row align-items-center">
 
                 <div class="col-md-2 mb-2 header-icon">
-                    <img src="./assets/icons/signature-logo.png" class="" alt="">
+                    <img src="<?php echo $targetPath ?>assets/icons/signature-logo.png" class="" alt="">
                 </div>
 
                 <div class="col-md-3 flex-icon mb-2 d-none d-md-block">
@@ -86,15 +87,15 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav nav-text-color">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?php echo $targetPath ?>home">Home <span class="sr-only">(current)</span></a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="activities.php">Activities</a>
+                        <a class="nav-link" href="<?php echo $targetPath ?>activities">Activities</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="packages.php">Packages</a>
+                        <a class="nav-link" href="<?php echo $targetPath ?>packages">Packages</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -104,24 +105,23 @@
                         <div class="dropdown-menu p-3" aria-labelledby="navbarDropdownMenuLink">
 
                             <?php
-                            include('./webadmin/database/Instances.php');
 
                             $destinationsCountries = $destination->displayCollection('countries');
 
                             foreach ($destinationsCountries as $country) :
                             ?>
 
-                                <a class="dropdown-item py-2" href="destination.php?country_id=<?php echo $country['id']; ?>"><?php echo $country['title']; ?></a>
+                                <a class="dropdown-item py-2" href="<?php echo $targetPath ?>destination.php?country_id=<?php echo $country['id']; ?>"><?php echo $country['title']; ?></a>
                             <?php endforeach;
                             ?>
 
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.php">Blog</a>
+                        <a class="nav-link" href="<?php echo $targetPath ?>blogs">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">About Us</a>
+                        <a class="nav-link" href="<?php echo $targetPath ?>about-us">About Us</a>
                     </li>
                 </ul>
             </div>

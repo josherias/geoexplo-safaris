@@ -224,8 +224,8 @@ $activitiesCollection = $activity->displayCollection('activities');
                             <tbody id="result">
                                 <?php foreach ($activitiesCollection as $activity) : ?>
                                     <tr id="rowHide" data-id="<?php echo $activity['id']; ?>">
-                                        <td><img width="80px" src="<?php echo $targetPath . "assets/images/activities/activities_db/" . $activity['photo']; ?>" alt="img"></td>
-                                        <td><a href="#"><?php echo $activity['title']; ?></a></td>
+                                        <td><img width="80px" src="<?php echo $targetPath . "assets/images/activities_db/" . $activity['photo']; ?>" alt="img"></td>
+                                        <td><?php echo $activity['title']; ?></td>
                                         <td><?php echo "$" . $activity['price']; ?></td>
                                         <td><?php echo $activity['countries']; ?></td>
                                         <td><?php echo htmlentities(substr($activity['short_desc'], 0, 30)) . "..."; ?></td>

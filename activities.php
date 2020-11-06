@@ -72,7 +72,7 @@ $activitiesCollection = $activity->displayCollection('activities');
                     <img src="<?php echo $targetPath . "assets/images/activities_db/" .  htmlentities($activitiesCollection[0]['photo'] ?? 'lake-mburo-zebras.jpg'); ?>" alt="img">
                     <div class="col-text">
                         <h5><?php echo htmlentities($activitiesCollection[0]['title'] ?? 'Title'); ?></h5>
-                        <a href="<?php printf('%s?id=%s', 'single-activity.php', $activitiesCollection[0]['id'] ?? 1); ?>" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                        <a href="<?php printf('%s/%s', 'activity', $activitiesCollection[0]['id'] ?? 1); ?>" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
                     </div>
                 </div>
                 <?php
@@ -82,7 +82,7 @@ $activitiesCollection = $activity->displayCollection('activities');
                         <img src="<?php echo $targetPath . "assets/images/activities_db/" .  htmlentities($activity['photo'] ?? 'lake-mburo-zebras.jpg'); ?>" alt="img">
                         <div class="col-text">
                             <h5><?php echo htmlentities($activity['title'] ?? 'Title'); ?></h5>
-                            <a href="<?php printf('%s?id=%s', 'single-activity.php', $activity['id'] ?? 1); ?>" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                            <a href="<?php printf('%s/%s', 'activity', $activity['id'] ?? 1); ?>" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
                         </div>
                     </div>
                 <?php endforeach ?>

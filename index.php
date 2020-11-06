@@ -92,7 +92,7 @@ shuffle($packageCollection);
                     <img src="<?php echo $targetPath . "assets/images/activities_db/" .  htmlentities($activitiesCollection[0]['photo'] ?? 'lake-mburo-zebras.jpg'); ?>" alt="img">
                     <div class="col-text">
                         <h5><?php echo htmlentities($activitiesCollection[0]['title'] ?? 'Title'); ?></h5>
-                        <a href="<?php printf('%s?id=%s', 'single-activity.php', $activitiesCollection[0]['id'] ?? 1); ?>" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                        <a href="<?php printf('%s/%s', 'activity', $activitiesCollection[0]['id'] ?? 1); ?>" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
                     </div>
                 </div>
                 <?php
@@ -103,7 +103,7 @@ shuffle($packageCollection);
                         <img src="<?php echo $targetPath . "assets/images/activities_db/" .  htmlentities($activity['photo'] ?? 'lake-mburo-zebras.jpg'); ?>" alt="img">
                         <div class="col-text">
                             <h5><?php echo htmlentities($activity['title'] ?? 'Title'); ?></h5>
-                            <a href="<?php printf('%s?id=%s', 'single-activity.php', $activity['id'] ?? 1); ?>" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                            <a href="<?php printf('%s/%s', 'activity', $activity['id'] ?? 1); ?>" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
                         </div>
                     </div>
                 <?php endforeach ?>
@@ -164,7 +164,7 @@ shuffle($packageCollection);
                     </div>
                     <div class="package-text">
                         <h5><?php echo htmlentities($package['name'] ?? 'Name'); ?></h5>
-                        <a href="<?php echo printf('%s?id=%s', 'packages.php', $package['id'] ?? 1) ?>" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                        <a href="packages" class="btn btn-success btn-sm my-2">Explore More &nbsp; <i class="fas fa-arrow-right"></i> </a>
                     </div>
                 </div>
             <?php endforeach ?>
@@ -184,7 +184,7 @@ shuffle($packageCollection);
                     traveling for wildlife, culture, photography, birding, primates, adventure, name it. Our team of experts is always ready to plan your journey to Africa’s rich and diverse wildlife,
                     cultural heritage and beautiful landscapes.</p>
 
-                <a href="about.php" class="btn btn-outline-light btn-large">More About Us</a>
+                <a href="about" class="btn btn-outline-light btn-large">More About Us</a>
             </div>
         </div>
     </div>

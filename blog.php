@@ -20,7 +20,7 @@ $blogCollection = $blog->displayCollection('blog_tb');
                 <div class="row">
 
                     <div class="col-md-12 my-3">
-                        <a href="single-blog.php?post_id=<?php echo $blogCollection[0]['id']; ?>">
+                        <a href="blogs/<?php echo $blogCollection[0]['id']; ?>">
                             <div class="card">
                                 <img src="<?php echo $targetPath . 'assets/images/blog_db/' . $blogCollection[0]['photo'] ?? './assets/images/blog_db/travel+leisure-named-kenya-and-rwanda-among-the-50-best-places-to-travel-in-2019.jpg'; ?>" class="card-img-top blog-img" alt="img">
                                 <div class="card-body">
@@ -36,7 +36,7 @@ $blogCollection = $blog->displayCollection('blog_tb');
 
                     <?php foreach ($blogCollection as $blog) : ?>
                         <div class="col-sm-6 my-3">
-                            <a href="single-blog.php?post_id=<?php echo $blog['id']; ?>">
+                            <a href="blogs/<?php echo $blog['id']; ?>">
                                 <div class="card">
                                     <img src="<?php echo $targetPath . 'assets/images/blog_db/' . $blog['photo'] ?? './assets/images/blog_db/10-reasons-to-visit-uganda-right-in-2019-1549448847.jpg' ?>" class="card-img-top blog-img" alt="img" />
 

@@ -15,14 +15,12 @@ $activities = $countryDetails['activities'];
 $countryActivitiesArray  =  explode(",", $activities);
 
 
-
 ?>
 
 
 <!-----hero activities- --- -->
 <section class="hero" style="background: url('./assets/images/destinations/rwenzori-1.jpg'); 
-  background-size: cover; background-position: center;
-  ">
+  background-size: cover; background-position: center;">
     <div class="hero-background">
         <div class="container">
             <div class="hero-flex">

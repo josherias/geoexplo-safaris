@@ -202,7 +202,7 @@ include_once('./includes/header.inc.php');
                             <tbody id="result">
                                 <?php foreach ($blogCollection as $blog) : ?>
                                     <tr id="rowHide" data-id="<?php echo $blog['id']; ?>">
-                                        <td><img width="80px" src="<?php echo $targetPath . "assets/images/blog/blog_db/" . htmlentities($blog['photo']); ?>" alt="img"></td>
+                                        <td><img width="80px" src="<?php echo $targetPath . "assets/images/blog_db/" . htmlentities($blog['photo']); ?>" alt="img"></td>
                                         <td><?php echo htmlentities($blog['title']); ?> </td>
                                         <td><?php echo htmlentities($blog['publish'] == 1 ? 'Yes' : 'No'); ?></td>
                                         <td><?php echo htmlentities($blog['views']); ?></td>
